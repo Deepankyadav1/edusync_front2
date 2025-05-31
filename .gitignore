@@ -8,16 +8,45 @@
 # testing
 /coverage
 
-# production
+# production build output
 /build
+/dist
 
-# misc
-.DS_Store
+# dotenv environment files
+.env
 .env.local
 .env.development.local
 .env.test.local
 .env.production.local
 
+# Logs
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+
+# Static files
+/public
+
+# MacOS system files
+.DS_Store
+
+# Windows system files
+Thumbs.db
+
+# IDE/editor files
+.idea
+.vscode
+
+# OS generated files
+Desktop.ini
+
+# React-specific configurations (if using react-app-rewired)
+# /react-app-rewired.js
+# /react-scripts
+
+# Lock files (optional, typically you don't want to ignore these for consistency)
+package-lock.json
+yarn.lock
+
+# IntelliJ files
+*.iml

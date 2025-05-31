@@ -1,0 +1,28 @@
+.enrolled-wrapper {
+    background-color: #f4f6f9;
+    min-height: 100vh;
+}
+
+.enrolled-card {
+    transition: all 0.3s ease;
+    border: 1px solid #e0e0e0;
+}
+
+.enrolled-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+.enrolled-card h5 {
+    color: #004aad;
+}
+
+.btn-primary {
+    background-color: #004aad;
+    border: none;
+    border-radius: 10px;
+}
+
+.btn-primary:hover {
+    background-color: #003b94;
+}
