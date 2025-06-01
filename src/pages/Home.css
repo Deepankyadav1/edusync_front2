@@ -14,7 +14,7 @@ body {
 /* Hero section */
 .home-hero {
   margin-top: 40px;
-  background: linear-gradient(135deg, rgba(122, 106, 216, 0.85), rgba(92, 77, 177, 0.85)),
+  background: linear-gradient(135deg, rgba(122, 106, 216, 0.85), rgba(92, 77, 177, 0.85));
    /* url('/public/image.jpeg') center/cover no-repeat;*/
   border-radius: 32px;
   padding: 60px 30px;
