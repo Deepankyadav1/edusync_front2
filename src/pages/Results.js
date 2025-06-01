@@ -2,6 +2,8 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import "./Result.css";
 
+const API_BASE_URL = process.env.REACT_APP_API_BASE_URL || "https://edusyncbackend5011-b9gshjc8auajdxat.centralindia-01.azurewebsites.net";
+
 const Results = () => {
   const [results, setResults] = useState([]);
   const [courses, setCourses] = useState([]);
@@ -20,7 +22,7 @@ const Results = () => {
 
     const fetchCourses = async () => {
       try {
-        const res = await axios.get("https://localhost:7233/api/Courses");
+        const res = await axios.get(`${API_BASE_URL}/api/Courses`);
         setCourses(res.data);
       } catch (err) {
         console.error("Failed to fetch courses", err);
@@ -30,13 +32,12 @@ const Results = () => {
     const fetchStudents = async () => {
       try {
         const res = await axios.get(
-          "https://localhost:7233/api/Users?role=Student",
+          `${API_BASE_URL}/api/Users?role=Student`,
           {
             headers: { Authorization: `Bearer ${token}` },
           }
         );
         setStudents(res.data);
-
       } catch (err) {
         console.error("Failed to load students", err);
         setError("Failed to load students.");
@@ -47,11 +48,9 @@ const Results = () => {
       try {
         let res;
         if (userRole === "Instructor") {
-          res = await axios.get("https://localhost:7233/api/Results/detailed");
+          res = await axios.get(`${API_BASE_URL}/api/Results/detailed`);
         } else {
-          res = await axios.get(
-            `https://localhost:7233/api/Results/user/${userId}`
-          );
+          res = await axios.get(`${API_BASE_URL}/api/Results/user/${userId}`);
         }
         setResults(res.data);
         console.log("Fetched Results:", res.data);
@@ -69,8 +68,7 @@ const Results = () => {
   }, []);
 
   const filteredResults = results.filter((r) => {
-    const courseMatch =
-      !selectedCourse || r.courseId?.toString() === selectedCourse;
+    const courseMatch = !selectedCourse || r.courseId?.toString() === selectedCourse;
     const studentMatch = !selectedStudent || r.userId === selectedStudent;
     return courseMatch && studentMatch;
   });
@@ -155,3 +153,4 @@ const Results = () => {
 };
 
 export default Results;
+
