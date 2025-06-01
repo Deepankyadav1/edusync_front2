@@ -3,7 +3,8 @@ import { Link } from "react-router-dom";
 import axios from "axios";
 import "./Home.css";
 
-const API_BASE_URL = "https://localhost:7233"; // <-- Change this to your backend port
+const API_BASE_URL = "https://edusyncbackend5011-b9gshjc8auajdxat.centralindia-01.azurewebsites.net";
+
 
 const Home = () => {
   const [studentsCount, setStudentsCount] = useState(0);
