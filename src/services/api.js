@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const API = axios.create({
-  baseURL: "https://localhost:7233/api", 
+  baseURL: "https://edusyncbackend5011-b9gshjc8auajdxat.centralindia-01.azurewebsites.net/api",
 });
 
 API.interceptors.request.use((config) => {
