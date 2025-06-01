@@ -1,15 +1,15 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 
+const API_BASE_URL = process.env.REACT_APP_API_BASE_URL || "https://edusyncbackend5011-b9gshjc8auajdxat.centralindia-01.azurewebsites.net";
+
 const ViewResults = () => {
   const [results, setResults] = useState([]);
 
   useEffect(() => {
     const fetchResults = async () => {
       try {
-        const response = await axios.get(
-          "https://localhost:7233/api/Results/detailed"
-        );
+        const response = await axios.get(`${API_BASE_URL}/api/Results/detailed`);
         setResults(response.data);
         console.log("Received results:", response.data);
       } catch (err) {
@@ -45,3 +45,4 @@ const ViewResults = () => {
 };
 
 export default ViewResults;
+
